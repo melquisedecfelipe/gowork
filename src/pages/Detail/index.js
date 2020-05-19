@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 import ReactMarkdown from "react-markdown";
@@ -11,6 +11,10 @@ function Detail({ location }) {
   const data = location.state.data;
 
   const history = useHistory();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Template>
