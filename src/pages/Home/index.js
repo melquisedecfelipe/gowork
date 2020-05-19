@@ -6,11 +6,10 @@ import gql from "graphql-tag";
 
 import Card from "../../components/Card";
 import Load from "../../components/Load";
-import Top from "../../components/Top";
+import Template from "../../components/Template";
 
 import "./styles.scss";
 
-import logo from "../../assets/logo.svg";
 import people from "../../assets/people.png";
 
 const GET_USERS = gql`
@@ -18,6 +17,7 @@ const GET_USERS = gql`
     jobs {
       id
       title
+      slug
       description
       applyUrl
       tags {
@@ -36,7 +36,6 @@ const GET_USERS = gql`
       remotes {
         name
       }
-      createdAt
     }
   }
 `;
@@ -49,7 +48,7 @@ function Home() {
   if (loading) return <Load />;
 
   return (
-    <>
+    <Template>
       <main className="home">
         <header>
           <p>
@@ -118,13 +117,8 @@ function Home() {
             </div>
           </aside>
         </section>
-        <footer>
-          <img src={logo} alt="GoWork Logo" />
-        </footer>
       </main>
-
-      <Top />
-    </>
+    </Template>
   );
 }
 

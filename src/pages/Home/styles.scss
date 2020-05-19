@@ -12,7 +12,7 @@
       left: 0;
       display: block;
       background: #242423;
-      height: 700px;
+      height: 800px;
       width: 100%;
       z-index: -1;
     }
@@ -157,18 +157,6 @@
       height: 350px;
       width: 100%;
       z-index: -1;
-    }
-  }
-
-  > footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    background: #242423;
-
-    > img {
-      height: 35px;
     }
   }
 }
