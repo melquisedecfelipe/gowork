@@ -1,0 +1,23 @@
+nav {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  background: #242423;
+
+  div {
+    width: 100%;
+
+    > img {
+      padding: 0 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  nav {
+    div {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  }
+}
