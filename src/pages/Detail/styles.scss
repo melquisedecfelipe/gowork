@@ -1,0 +1,135 @@
+.detail {
+  > header {
+    background: #ffc220;
+
+    > div {
+      padding: 100px 20px;
+
+      > span {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        > svg {
+          margin-right: 16px;
+        }
+
+        > p {
+          color: #242423;
+          font-size: 18px;
+        }
+      }
+
+      > p {
+        font-size: 38px;
+        color: #242423;
+        font-weight: bold;
+        margin-top: 64px;
+      }
+    }
+  }
+
+  > section {
+    padding: 100px 20px;
+    position: relative;
+
+    > aside {
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ffc220;
+    }
+
+    > div {
+      padding-top: 20px;
+
+      > span {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 18px;
+
+        > small {
+          font-size: 14px;
+          color: #242423;
+          opacity: 0.6;
+          margin-top: 5px;
+        }
+
+        > strong {
+          font-size: 18px;
+          color: #242423;
+          margin-top: 5px;
+        }
+      }
+
+      > a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ffc220;
+        font-size: 24px;
+        font-weight: bold;
+        color: #242423;
+        text-decoration: none;
+        padding: 17.5px;
+        border-radius: 5px;
+        transition: opacity 0.2s;
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+
+      > div {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 16px;
+
+        > span {
+          font-size: 12px;
+          color: #242423;
+          opacity: 0.6;
+          padding: 7.5px 15px;
+          border-radius: 5px;
+          border: 2px solid #242423;
+          margin: 5px 5px 0 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .detail {
+    > section {
+      display: flex;
+
+      > aside {
+        flex: 1;
+        margin-right: 128px;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      > div {
+        border-top: none;
+        width: 200px;
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .detail {
+    > header {
+      > div {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+    }
+
+    > section {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  }
+}
