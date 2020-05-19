@@ -1,0 +1,20 @@
+{
+  "name": "GoWork",
+  "theme_color": "#f9f9f9",
+  "background_color": "#ffc220",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
