@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
+import { useHistory } from "react-router-dom";
 import { FiMapPin } from "react-icons/fi";
 
 import truncateString from "../../utils/truncateString";
@@ -9,6 +10,7 @@ function Card({ job }) {
   const [data] = useState(() => {
     const data = {
       title: job.title,
+      slug: job.slug,
       description: job.description,
       applyUrl: job.applyUrl,
       tags: job.tags.map((tag) => tag.name),
@@ -16,11 +18,19 @@ function Card({ job }) {
       city: job.cities.map((city) => city.name).join(", "),
       commitment: job.commitment.title,
       remote: job.remotes.map((remote) => remote.name),
-      createdAt: job.createdAt,
     };
 
     return data;
   });
+
+  const history = useHistory();
+
+  const handleDetail = useCallback(
+    (data) => {
+      history.push(`detalhe/${data.slug}`, { data });
+    },
+    [history]
+  );
 
   return (
     job !== undefined && (
@@ -43,7 +53,7 @@ function Card({ job }) {
               <p title={data.city}>{truncateString(data.city)}</p>
             )}
           </span>
-          <button>Ver vaga</button>
+          <button onClick={() => handleDetail(data)}>Ver vaga</button>
         </section>
       </main>
     )
