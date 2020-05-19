@@ -1,0 +1,13 @@
+.top {
+  border: none;
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  background: rgba(36, 36, 35, 0.5);
+}
