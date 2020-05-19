@@ -1,0 +1,25 @@
+.load {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #242423;
+  min-height: 100vh;
+
+  > svg {
+    animation: rotate 4s infinite;
+  }
+
+  > p {
+    font-size: 32px;
+    color: #f9f9f9;
+    margin-top: 32px;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
