@@ -6,8 +6,6 @@ import truncateString from "../../utils/truncateString";
 import "./styles.scss";
 
 function Card({ job }) {
-  console.log(job);
-
   const [data] = useState(() => {
     const data = {
       title: job.title,
@@ -20,8 +18,6 @@ function Card({ job }) {
       remote: job.remotes.map((remote) => remote.name),
       createdAt: job.createdAt,
     };
-
-    console.log(data.city);
 
     return data;
   });
