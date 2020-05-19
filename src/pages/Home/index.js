@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiGift, FiBriefcase } from "react-icons/fi";
 
 import { useQuery } from "@apollo/react-hooks";
@@ -41,6 +41,8 @@ const GET_USERS = gql`
 `;
 
 function Home() {
+  const [showAll, setShowAll] = useState(false);
+
   const { loading, data } = useQuery(GET_USERS);
 
   if (loading) return <Load />;
@@ -96,13 +98,18 @@ function Home() {
           </div>
         </aside>
         <aside className="jobs">
-          <span>
-            <FiBriefcase color="#242423" size={50} />
-            <p>
-              Vagas <strong>Cadastradas</strong>
-            </p>
-          </span>
-          <div>
+          <div className="jobs__header">
+            <span>
+              <FiBriefcase color="#242423" size={50} />
+              <p>
+                Vagas <strong>Cadastradas</strong>
+              </p>
+            </span>
+            <button onClick={() => setShowAll(!showAll)}>
+              Mostrar todas as vagas
+            </button>
+          </div>
+          <div className={showAll ? "--all" : null}>
             {data.jobs.map((job) => (
               <Card job={job} />
             ))}

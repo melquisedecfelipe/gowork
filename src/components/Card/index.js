@@ -29,7 +29,7 @@ function Card({ job }) {
   return (
     job !== undefined && (
       <main className="card">
-        <section className="card--header">
+        <section className="card__header">
           <div>
             {data.tags.map((tag) => (
               <span key={tag}>{tag}</span>
@@ -38,7 +38,7 @@ function Card({ job }) {
           <h2>{data.title}</h2>
           <p>{data.commitment}</p>
         </section>
-        <section className="card--footer">
+        <section className="card__footer">
           <span>
             <FiMapPin color="#242423" size={20} />
             {data.remote.length !== 0 ? (

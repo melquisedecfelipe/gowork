@@ -6,7 +6,7 @@
   box-shadow: 0px 5px 5px #0000000f;
   border-radius: 5px;
 
-  > .card--header {
+  > .card__header {
     padding: 30px 20px;
 
     > div {
@@ -26,7 +26,6 @@
 
       &::-webkit-scrollbar-thumb {
         background: #ffc220;
-        border-radius: 5px;
       }
 
       > span {
@@ -56,7 +55,7 @@
     }
   }
 
-  > .card--footer {
+  > .card__footer {
     display: flex;
     justify-content: space-between;
     background: #f9f9f9;
