@@ -53,6 +53,19 @@
       padding: 20px;
       overflow: auto;
 
+      &::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #fecd4b;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #f3b40a;
+      }
+
       > span {
         display: flex;
         align-items: center;
