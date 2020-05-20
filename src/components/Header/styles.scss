@@ -6,9 +6,18 @@ nav {
 
   div {
     width: 100%;
+    padding: 0 20px;
 
-    > img {
-      padding: 0 20px;
+    > p {
+      font-size: 38px;
+      color: #f9f9f9;
+      font-family: "Nunito", sans-serif;
+      letter-spacing: 1px;
+
+      > span {
+        font-weight: bold;
+        color: #ffc220;
+      }
     }
   }
 }
