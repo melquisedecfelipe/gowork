@@ -26,13 +26,6 @@ function Detail({ location }) {
               <p>Voltar para as vagas</p>
             </span>
             <p>{data.title}</p>
-            <a
-              href={data.company.websiteUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Empresa: {data.company.name}
-            </a>
           </div>
         </header>
         <section className="tags">
@@ -47,6 +40,16 @@ function Detail({ location }) {
             <ReactMarkdown source={data.description} />
           </aside>
           <div>
+            <span>
+              <small>Empresa</small>
+              <a
+                href={data.company.websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {data.company.name}
+              </a>
+            </span>
             <span>
               <small>Local</small>
               {data.remote.length !== 0 ? (

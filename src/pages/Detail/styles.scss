@@ -158,6 +158,22 @@
           margin-top: 5px;
         }
 
+        > a {
+          font-size: 18px;
+          color: #242423;
+          margin-top: 5px;
+          font-weight: bold;
+          text-decoration: none;
+          box-shadow: 25px 0 0 #ffc220 inset;
+          transition: all 0.2s;
+          cursor: pointer;
+
+          &:hover {
+            box-shadow: 50px 0 0 0 #ffc220 inset;
+            padding-left: 10px;
+          }
+        }
+
         > strong {
           font-size: 18px;
           color: #242423;
