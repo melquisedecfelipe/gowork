@@ -26,6 +26,21 @@
         font-weight: bold;
         margin-top: 64px;
       }
+
+      > a {
+        font-size: 16px;
+        color: #242423;
+        opacity: 0.6;
+        margin-top: 5px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: opacity 0.2s;
+        margin-top: 15px;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
     }
   }
 

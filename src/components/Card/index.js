@@ -42,7 +42,13 @@ function Card({ job }) {
             ))}
           </div>
           <h2>{data.title}</h2>
-          <p>{data.commitment}</p>
+          <a
+            href={data.company.websiteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {data.company.name}
+          </a>
         </section>
         <section className="card__footer">
           <span>

@@ -47,11 +47,18 @@
       margin-top: 16px;
     }
 
-    > p {
+    > a {
       font-size: 16px;
       color: #242423;
       opacity: 0.6;
       margin-top: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 

@@ -26,6 +26,13 @@ function Detail({ location }) {
               <p>Voltar para as vagas</p>
             </span>
             <p>{data.title}</p>
+            <a
+              href={data.company.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Empresa: {data.company.name}
+            </a>
           </div>
         </header>
         <section>
@@ -45,12 +52,7 @@ function Detail({ location }) {
               <small>Formato</small>
               <strong>{data.commitment}</strong>
             </span>
-            <a
-              href={data.applyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              alt={data.title}
-            >
+            <a href={data.applyUrl} target="_blank" rel="noopener noreferrer">
               Aplicar
             </a>
             <div>
