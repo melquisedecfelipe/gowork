@@ -85,6 +85,20 @@
 
       > p {
         font-size: 14px;
+        line-height: 24px;
+        color: #929292;
+      }
+
+      a {
+        color: #242423;
+        text-decoration: none;
+        box-shadow: 0 -5px 0 0 #ffc220 inset;
+        transition: box-shadow 0.2s;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 0 -10px 0 0 #ffc220 inset;
+        }
       }
 
       > small {
@@ -96,6 +110,12 @@
         font-size: 14px;
         list-style-position: inside;
         padding-left: 0;
+
+        > li {
+          font-size: 14px;
+          line-height: 24px;
+          color: #929292;
+        }
       }
     }
 

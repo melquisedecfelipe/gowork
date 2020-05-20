@@ -114,16 +114,15 @@
           background-color: transparent;
           box-shadow: 0 -5px 0 0 #ffc220 inset;
           transition: box-shadow 0.2s;
-          height: 30px;
-          width: 165px;
+          height: 22.5px;
+          width: 160px;
           font-size: 16px;
-          font-weight: bold;
           color: #242423;
           margin-top: 5px;
           cursor: pointer;
 
           &:hover {
-            box-shadow: 0 -7.5px 0 0 #ffc220 inset;
+            box-shadow: 0 -10px 0 0 #ffc220 inset;
           }
         }
       }
