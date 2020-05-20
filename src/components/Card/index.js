@@ -56,7 +56,7 @@ function Card({ job }) {
             {data.remote.length !== 0 ? (
               <p>{data.remote}</p>
             ) : (
-              <p title={data.city}>{truncateString(data.city)}</p>
+              <p title={data.city}>{truncateString(data.city, 14)}</p>
             )}
           </span>
           <button onClick={() => handleDetail(data)}>Ver vaga</button>
