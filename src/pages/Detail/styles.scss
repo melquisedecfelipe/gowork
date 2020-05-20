@@ -36,6 +36,57 @@
     > aside {
       padding-bottom: 20px;
       border-bottom: 1px solid #ffc220;
+      color: #242423;
+
+      > h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+      }
+
+      > h2 {
+        font-size: 32px;
+        margin: 20px 0 5px 0;
+      }
+
+      > h3 {
+        font-size: 28px;
+        margin: 20px 0 5px 0;
+      }
+
+      > h4 {
+        font-size: 24px;
+        margin: 20px 0 5px 0;
+      }
+
+      > h5 {
+        font-size: 20px;
+        margin: 20px 0 5px 0;
+      }
+
+      > h6 {
+        font-size: 16px;
+        margin: 20px 0 5px 0;
+      }
+
+      > p {
+        font-size: 14px;
+
+        > strong {
+          margin: 20px 0 5px 0;
+          font-size: 18px;
+        }
+      }
+
+      > small {
+        font-size: 12px;
+      }
+
+      > ul {
+        list-style-type: square;
+        font-size: 14px;
+        list-style-position: inside;
+        padding-left: 0;
+      }
     }
 
     > div {
