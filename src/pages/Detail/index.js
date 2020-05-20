@@ -35,7 +35,14 @@ function Detail({ location }) {
             </a>
           </div>
         </header>
-        <section>
+        <section className="tags">
+          <div>
+            {data.tags.map((tag) => (
+              <span key={tag}>{tag}</span>
+            ))}
+          </div>
+        </section>
+        <section className="info">
           <aside>
             <ReactMarkdown source={data.description} />
           </aside>
@@ -55,11 +62,6 @@ function Detail({ location }) {
             <a href={data.applyUrl} target="_blank" rel="noopener noreferrer">
               Aplicar
             </a>
-            <div>
-              {data.tags.map((tag) => (
-                <span key={tag}>{tag}</span>
-              ))}
-            </div>
           </div>
         </section>
       </main>
