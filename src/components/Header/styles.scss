@@ -5,6 +5,8 @@ nav {
   background: #242423;
 
   div {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     padding: 0 20px;
 
@@ -17,6 +19,36 @@ nav {
       > span {
         font-weight: bold;
         color: #ffc220;
+      }
+    }
+
+    > span {
+      display: flex;
+      align-items: center;
+
+      > a {
+        font-size: 40px;
+        color: #fff;
+        opacity: 0.1;
+        transition: all 0.25s linear;
+      }
+
+      > p {
+        opacity: 0;
+        transition: all 0.25s linear;
+      }
+
+      &:hover {
+        > a {
+          opacity: 1;
+          color: #fff;
+        }
+
+        > p {
+          opacity: 1;
+          margin-right: 20px;
+          color: #fff;
+        }
       }
     }
   }
