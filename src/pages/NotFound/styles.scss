@@ -1,0 +1,19 @@
+.not__found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #242423;
+  min-height: 100vh;
+
+  > svg {
+    margin-right: 16px;
+    cursor: pointer;
+  }
+
+  > p {
+    font-size: 32px;
+    color: #f9f9f9;
+    margin-top: 32px;
+  }
+}
