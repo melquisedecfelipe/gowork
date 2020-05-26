@@ -7,9 +7,12 @@ import Template from "../../components/Template";
 
 import "./styles.scss";
 
+// Recebo o location como props.
 function Detail({ location }) {
-  const data = location.state.data;
+  // Pego o valor do detalhe da vaga.
+  const jobDetail = location.state.jobDetail;
 
+  // Declaração do hook useHistory do react router dom, para realizar redirecionamentos.
   const history = useHistory();
 
   return (
@@ -17,48 +20,56 @@ function Detail({ location }) {
       <main className="detail">
         <header>
           <div>
+            {/* Utilizo o goBack para voltar para página anterior. */}
             <span onClick={() => history.goBack()}>
               <FiArrowLeft color="#242423" size={20} />
               <p>Voltar para as vagas</p>
             </span>
-            <p>{data.title}</p>
+            <p>{jobDetail.title}</p>
           </div>
         </header>
         <section className="tags">
           <div>
-            {data.tags.map((tag) => (
+            {/* Realizo o map nas tags para rederinzar uma por uma. */}
+            {jobDetail.tags.map((tag) => (
               <span key={tag}>{tag}</span>
             ))}
           </div>
         </section>
         <section className="info">
           <aside>
-            <ReactMarkdown source={data.description} />
+            <ReactMarkdown source={jobDetail.description} />
           </aside>
           <div>
             <span>
               <small>Empresa</small>
               <a
-                href={data.company.websiteUrl}
+                href={jobDetail.company.websiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {data.company.name}
+                {jobDetail.company.name}
               </a>
             </span>
             <span>
               <small>Local</small>
-              {data.remote.length !== 0 ? (
-                <strong>{data.remote}</strong>
+              {/* Verifico se a vaga é remota ou não. */}
+              {jobDetail.remote.length !== 0 ? (
+                <strong>{jobDetail.remote}</strong>
               ) : (
-                <strong>{data.city}</strong>
+                // Se não for remota, realizo um truncate no valor se for maior que o size passado.
+                <strong>{jobDetail.city}</strong>
               )}
             </span>
             <span>
               <small>Formato</small>
-              <strong>{data.commitment}</strong>
+              <strong>{jobDetail.commitment}</strong>
             </span>
-            <a href={data.applyUrl} target="_blank" rel="noopener noreferrer">
+            <a
+              href={jobDetail.applyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Aplicar
             </a>
           </div>

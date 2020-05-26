@@ -6,6 +6,7 @@ import ApolloClient from "apollo-boost";
 
 import App from "./App";
 
+// Declaração do link da api.
 const client = new ApolloClient({
   uri: "https://api.graphql.jobs/",
 });

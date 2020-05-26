@@ -12,6 +12,15 @@ import "./styles.scss";
 
 import people from "../../assets/people.png";
 
+// Alguns principios do GraphQL.
+// Toda request é POST.
+// Toda request bate no MESMO endpoint.
+
+// Query -> listas informações (GET).
+// Mutation -> manipular dados (POST/PUT/PATCH/DELETE).
+// Scalar types -> String, Int, Boolean, Float e ID.
+
+// Criação da query de consulta do GraphQL.
 const GET_USERS = gql`
   {
     jobs {
@@ -41,10 +50,14 @@ const GET_USERS = gql`
 `;
 
 function Home() {
+  // Crio um state utilizando o hook useState, e a atribuo o valor que vou utilizar.
   const [showAll, setShowAll] = useState(false);
 
+  // Utilizo o useQuery para realizar a requisição do GraphQL.
+  // E realizo a desestruturação pegando loading e data.
   const { loading, data } = useQuery(GET_USERS);
 
+  // Se loading for true renderizo o componete Load.
   if (loading) return <Load />;
 
   return (
@@ -106,11 +119,13 @@ function Home() {
                   Vagas <strong>Cadastradas</strong>
                 </p>
               </span>
+              {/* Por padrão exibido apenas algumas vagas, caso ele clique no botão, passo o valor como contrário. */}
               <button onClick={() => setShowAll(!showAll)}>
                 Mostrar todas as vagas
               </button>
             </div>
             <div className={showAll ? "--all" : null}>
+              {/* Realizo o map nas vagas, passando a vaga como props para o filho. */}
               {data.jobs.map((job) => (
                 <Card key={job.id} job={job} />
               ))}

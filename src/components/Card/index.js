@@ -6,60 +6,65 @@ import truncateString from "../../utils/truncateString";
 
 import "./styles.scss";
 
+// Card é um componente que recebe apenas uma prop do pai, sendo: job (vaga).
 function Card({ job }) {
-  const [data] = useState(() => {
-    const data = {
-      title: job.title,
-      slug: job.slug,
-      description: job.description,
-      applyUrl: job.applyUrl,
-      tags: job.tags.map((tag) => tag.name),
-      company: job.company,
-      city: job.cities.map((city) => city.name).join(", "),
-      commitment: job.commitment.title,
-      remote: job.remotes.map((remote) => remote.name),
-    };
+  // Crio um state utilizando o hook useState, e a atribuo o valor que vou utilizar.
+  const [jobDetail] = useState(() => ({
+    title: job.title,
+    slug: job.slug,
+    description: job.description,
+    applyUrl: job.applyUrl,
+    tags: job.tags.map((tag) => tag.name),
+    company: job.company,
+    city: job.cities.map((city) => city.name).join(", "),
+    commitment: job.commitment.title,
+    remote: job.remotes.map((remote) => remote.name),
+  }));
 
-    return data;
-  });
-
+  // Declaração do hook useHistory do react router dom, para realizar redirecionamentos.
   const history = useHistory();
 
+  // Crio uma função usando o hook useCallback para realizar o redirecionamento para o detalhe da vaga.
+  // Enviando para rota detalhe/nome-da-vaga, e passo state pela rota.
   const handleDetail = useCallback(
-    (data) => {
-      history.push(`detalhe/${data.slug}`, { data });
+    (jobDetail) => {
+      history.push(`detalhe/${jobDetail.slug}`, { jobDetail });
     },
     [history]
   );
 
   return (
+    // Verifico se a props job é diferente de undefined, se for eu renderizo o restante.
     job !== undefined && (
       <main className="card">
         <section className="card__header">
           <div>
-            {data.tags.map((tag) => (
+            {/* Realizo o map nas tags para rederinzar uma por uma. */}
+            {jobDetail.tags.map((tag) => (
               <span key={tag}>{tag}</span>
             ))}
           </div>
-          <h2>{data.title}</h2>
+          <h2>{jobDetail.title}</h2>
           <a
-            href={data.company.websiteUrl}
+            href={jobDetail.company.websiteUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {data.company.name}
+            {jobDetail.company.name}
           </a>
         </section>
         <section className="card__footer">
           <span>
             <FiMapPin color="#242423" size={20} />
-            {data.remote.length !== 0 ? (
-              <p>{data.remote}</p>
+            {/* Verifico se a vaga é remota ou não. */}
+            {jobDetail.remote.length !== 0 ? (
+              <p>{jobDetail.remote}</p>
             ) : (
-              <p title={data.city}>{truncateString(data.city, 14)}</p>
+              // Se não for remota, realizo um truncate no valor se for maior que o size passado.
+              <p title={jobDetail.city}>{truncateString(jobDetail.city, 14)}</p>
             )}
           </span>
-          <button onClick={() => handleDetail(data)}>Ver vaga</button>
+          <button onClick={() => handleDetail(jobDetail)}>Ver vaga</button>
         </section>
       </main>
     )

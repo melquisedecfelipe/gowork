@@ -5,6 +5,7 @@ import { FiChevronUp } from "react-icons/fi";
 import "./styles.scss";
 
 function Top() {
+  // Crio uma função utilizando o useCallback para realizar o scroll até o topo da página.
   const handleTop = useCallback(() => {
     window.scrollTo(0, 0);
   }, []);
